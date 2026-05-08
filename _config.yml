@@ -14,11 +14,11 @@ timezone: "Asia/Seoul"
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: "WEB 정리"
+title: "Clover"
 
-tagline: "WEB 정리 블로그"
+tagline: "보안 글 끄적이기"
 
-description: "WEB 구조와, 취약점을 정리한 블로그입니다."
+description: "다양한 글 쓰는 블로그"
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
