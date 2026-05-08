@@ -5,7 +5,6 @@ categories: [WEB, Vulnerability]
 tags: [sql-injection, xss, csrf, authentication / session, broken-access-control / idor, file-upload]
 ---
 
-# 웹 취약점 정리
 
 웹 애플리케이션은 사용자의 입력을 받고, 서버에서 요청을 처리한 뒤, 데이터베이스와 통신하며 결과를 다시 사용자에게 보여준다. 이 과정에서 입력값 처리, 인증, 권한 확인, 세션 관리, 파일 처리, 데이터 출력 방식 중 하나라도 안전하게 설계되지 않으면 취약점이 발생할 수 있다.
 
@@ -35,7 +34,7 @@ tags: [sql-injection, xss, csrf, authentication / session, broken-access-control
 
 ---
 
-웹 보안에서 자주 등장하는 취약점
+## 웹 보안에서 자주 등장하는 취약점
 
 - SQL Injection
 - XSS
