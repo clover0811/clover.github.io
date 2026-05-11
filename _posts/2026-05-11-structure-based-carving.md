@@ -78,3 +78,4 @@ while True:
     if isFlagZip(data, idx):
         print("find: ", hex(idx))  # find:  0xeeadfa 출력
     idx += 1
+```
