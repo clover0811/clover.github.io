@@ -7,7 +7,7 @@ tags: [PNG, ZIP, File Structure, Digital Forensics]
 
 ## 미션 선정 이유
 
-PNG, ZIP 파일 구조 이해와 디지털포렌식 CTF문제 맛보기
+PNG, ZIP 파일 구조 이해와 디지털 포렌식 CTF문제 맛보기
 
 ## 수행 과정
 
@@ -79,7 +79,7 @@ PNG에서 가장 기본적으로 알아야 할 chunk는 `IHDR`, `IDAT`, `IEND`�
 
 ### IHDR
 
-`IHDR`은 PNG 파일의 첫 번째 이며chunk, 이미지의 기본 정보를 담고 있다.
+`IHDR`은 PNG 파일의 첫 번째 chunk이며, 이미지의 기본 정보를 담고 있다.
 
 - 이미지의 가로 길이
 - 이미지의 세로 길이
