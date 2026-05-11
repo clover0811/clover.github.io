@@ -45,7 +45,7 @@ ZIP의 Local File Header에는 `general purpose bit flag`라는 값이 존재하
 
 <img width="1500" height="200" alt="image" src="https://github.com/user-attachments/assets/0997161c-f946-406f-8992-119166464fac" />
 
-발견한 문자열을 통해 플래그를 획득
+발견한 문자열을 비밀번호로 사용해서 ZIP 파일의 압축을 해제했고, 그 결과로 플래그 획득~
 
 <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/b362954f-ae20-4bb2-a834-66fc0df39097" />
 
@@ -76,6 +76,6 @@ while True:
     if idx == -1:
         break
     if isFlagZip(data, idx):
-        print("find: ", hex(idx))  # find:  0xeeadfa 출력
+        print("find: ", hex(idx))  # find:  0xeeade8 출력
     idx += 1
 ```
