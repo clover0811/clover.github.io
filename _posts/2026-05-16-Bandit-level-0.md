@@ -26,18 +26,10 @@ tags: [Bandit, OverTheWire, Wargame, Linux, SSH]
 
 <img width="550" height="600" alt="image" src="https://github.com/user-attachments/assets/56b149ce-83e6-45a0-beb7-7fa4cad35ffc" />
 
-문제에서 제공된 정보를 바탕으로 SSH 접속을 시도했다.
+문제에서 제공된 정보를 바탕으로 `ssh bandit0@bandit.labs.overthewire.org -p 2220`로 접속을 시도했다.
 
-`ssh bandit0@bandit.labs.overthewire.org -p 2220`
+비밀번호로 `bandit0`을 입력하면 Bandit 서버에 로그인 할 수 있다.
 
-명령어를 실행하면 비밀번호를 입력하라는 창이 나오는데
-
-`password: bandit0`
-
-비밀번호로 bandit0을 입력하면 Bandit 서버에 로그인 할 수 있다.
-
-정상적으로 로그인 되면 다음과 같이 프롬포트가 변경된다.
-
-`bandit0@bandit:~$`
+정상적으로 로그인 되면 `bandit0@bandit:~$`로 프롬포트가 변경된다.
 
 이를 통해 Level 0 서버 접속에 성공했음을 확인할 수 있다.
