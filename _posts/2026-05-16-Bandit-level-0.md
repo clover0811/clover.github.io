@@ -30,6 +30,4 @@ tags: [Bandit, OverTheWire, Wargame, Linux, SSH]
 
 비밀번호로 `bandit0`을 입력하면 Bandit 서버에 로그인 할 수 있다.
 
-정상적으로 로그인 되면 `bandit0@bandit:~$`로 프롬포트가 변경된다.
-
-이를 통해 Level 0 서버 접속에 성공했음을 확인할 수 있다.
+정상적으로 로그인 되면 `bandit0@bandit:~$`로 프롬포트가 변경이 되고, 이를 통해 Level 0 서버 접속에 성공했음을 확인할 수 있다.
