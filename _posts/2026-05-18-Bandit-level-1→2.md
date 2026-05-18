@@ -13,23 +13,23 @@ tags: [Bandit, OverTheWire, Wargame, Linux, SSH]
 
 ## 풀이 과정
 
-<img width="450" height="250" alt="image" src="https://github.com/user-attachments/assets/b78d7fb7-20aa-4cee-9766-9069b452df22" />
+<img width="500" height="200" alt="image" src="https://github.com/user-attachments/assets/b78d7fb7-20aa-4cee-9766-9069b452df22" />
 
 `ls`명령어로 홈 디렉터리 안에 `-`라는 파일이 있는 것을 확인했고, 이전 단계와 같이 `cat`명령어를 통해 `-`파일을 열어보았다.
 
 그런데 파일이 열리지 않는다.. `cat`명령어가 뭔가 잘못된 건 아닐까..?
 
-이전 문제에서 정리한 `cat`명령어를 봤을 때 `cat`명령어는 파일의 내용을 출력하는 명령어라는 걸 알 수 있다.
+이전 문제에서 정리한 글을 보면 `cat`명령어는 파일의 내용을 출력하는 명령어라는 걸 알 수 있다.
 
 하지만 파일의 내용이 출력되지 않는 걸 보고 다른 명령어가 있는지 알아보고, `cat`명령어에 대해서도 문제점이 뭔지 자세히 알아보았다.
 
-알아본 결과 `cat`명령어는 표준 출력 형식으로 파일의 내용을 보여주는 명령어인데 `-`라는 문자는 표준 입력 형식으로 바뀌기 때문에 입력하는 값이 출력이 되는 것이었다.
+알아본 결과 `cat`명령어는 표준 출력 형식으로 파일의 내용을 보여주는 명령어인데, `-`라는 문자는 표준 입력 형식으로 바뀌기 때문에 입력하는 값이 출력이 되는 것이었다.
 
 즉 `-`파일을 파일이 아닌 문자로 인식해서 생긴 문제였다.
 
-<img width="750" height="170" alt="image" src="https://github.com/user-attachments/assets/a5fb639d-4070-4c8e-b317-26a18e2eaa61" />
+<img width="730" height="170" alt="image" src="https://github.com/user-attachments/assets/a5fb639d-4070-4c8e-b317-26a18e2eaa61" />
 
-그렇다면 이 문제를 해결할 방법은 없는걸까...?
+그렇다면 이 문제를 해결할 방법은 없는걸까...? (No)
 
 해결 방법은 `-`문자를 문자가 아닌 파일로 읽을 수 있도록 해줘야한다.
 
