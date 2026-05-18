@@ -7,13 +7,13 @@ tags: [Bandit, OverTheWire, Wargame, Linux, SSH]
 
 ## 문제 설명
 
-<img width="550" height="250" alt="image" src="https://github.com/user-attachments/assets/cff86108-9a55-4461-8cdc-fa0bc16b3c9e" />
+<img width="500" height="240" alt="image" src="https://github.com/user-attachments/assets/cff86108-9a55-4461-8cdc-fa0bc16b3c9e" />
 
 이번 문제는 홈 디렉터리에 있는 `-` 라는 파일에 비밀번호가 저장되어 있고, bandit2에 로그인 하는 것이 목표다.
 
 ## 풀이 과정
 
-<img width="500" height="200" alt="image" src="https://github.com/user-attachments/assets/b78d7fb7-20aa-4cee-9766-9069b452df22" />
+<img width="480" height="150" alt="image" src="https://github.com/user-attachments/assets/b78d7fb7-20aa-4cee-9766-9069b452df22" />
 
 `ls`명령어로 홈 디렉터리 안에 `-`라는 파일이 있는 것을 확인했고, 이전 단계와 같이 `cat`명령어를 통해 `-`파일을 열어보았다.
 
@@ -27,7 +27,7 @@ tags: [Bandit, OverTheWire, Wargame, Linux, SSH]
 
 즉 `-`파일을 파일이 아닌 문자로 인식해서 생긴 문제였다.
 
-<img width="730" height="170" alt="image" src="https://github.com/user-attachments/assets/a5fb639d-4070-4c8e-b317-26a18e2eaa61" />
+<img width="650" height="170" alt="image" src="https://github.com/user-attachments/assets/a5fb639d-4070-4c8e-b317-26a18e2eaa61" />
 
 그렇다면 이 문제를 해결할 방법은 없는걸까...? (No)
 
