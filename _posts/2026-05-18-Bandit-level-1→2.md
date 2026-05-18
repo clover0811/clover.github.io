@@ -11,6 +11,8 @@ tags: [Bandit, OverTheWire, Wargame, Linux, SSH]
 
 이번 문제는 홈 디렉터리에 있는 `-` 라는 파일에 비밀번호가 저장되어 있고, bandit2에 로그인 하는 것이 목표다.
 
+## 풀이 과정
+
 <img width="450" height="250" alt="image" src="https://github.com/user-attachments/assets/b78d7fb7-20aa-4cee-9766-9069b452df22" />
 
 `ls`명령어로 홈 디렉터리 안에 `-`라는 파일이 있는 것을 확인했고, 이전 단계와 같이 `cat`명령어를 통해 `-`파일을 열어보았다.
@@ -29,20 +31,20 @@ tags: [Bandit, OverTheWire, Wargame, Linux, SSH]
 
 그렇다면 이 문제를 해결할 방법은 없는걸까...?
 
-그랬으면 문제로 출제하진 않았겠지.. `-`문자를 문자가 아닌 파일로 읽을 수 있도록 해줘야한다.
+해결 방법은 `-`문자를 문자가 아닌 파일로 읽을 수 있도록 해줘야한다.
 
-이때 중요한 것이 절대 경로와 상대 경로인데 절대 경로는 최상위 루트(/)부터 전체 경로를 표현하는 것이고, 상대 경로는 현재 작업 디렉터리(.)를 기준으로 경로를 표시하는 것이다.
+이때 중요한 것이 바로 절대 경로와 상대 경로다.
+
+절대 경로는 최상위 루트(/)부터 전체 경로를 표현하는 것을 의미하고, 상대 경로는 현재 작업 디렉터리(.)를 기준으로 경로를 표현하는 것을 의미한다.
 
 이를 이용하여 문제를 풀어보면
 
-<img width="476" height="72" alt="image" src="https://github.com/user-attachments/assets/2f808567-41fe-4213-ba31-dc44293560b1" />
-
+<img width="500" height="80" alt="image" src="https://github.com/user-attachments/assets/2f808567-41fe-4213-ba31-dc44293560b1" />
 <p align="center">
   <sub>절대 경로를 사용하여 `-` 파일을 읽은 결과</sub>
 </p>
 
-<img width="414" height="69" alt="image" src="https://github.com/user-attachments/assets/9cbcbece-5509-44a0-9668-579960364573" />
-
+<img width="500" height="80" alt="image" src="https://github.com/user-attachments/assets/9cbcbece-5509-44a0-9668-579960364573" />
 <p align="center">
   <sub>절대 경로를 사용하여 - 파일을 읽은 결과</sub>
 </p>
