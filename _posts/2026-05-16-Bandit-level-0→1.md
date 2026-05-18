@@ -15,8 +15,15 @@ tags: [Bandit, OverTheWire, Wargame, Linux, SSH]
 
 <img width="650" height="250" alt="image" src="https://github.com/user-attachments/assets/9d193eca-a5ff-49f5-9893-37e063d483c3" />
 
-홈 디렉토리 안에 `readme`파일이 있는 것을 확인했다.
+`ls`명령어로 홈 디렉토리 안에 `readme`파일이 있는 것을 확인했다.
 
 `cat`명령어를 통해 `readme`파일을 열었고, `bandit1`의 비밀번호를 찾을 수 있었다.
 
 얻은 비밀번호를 통해 `bandit1`계정으로 로그인을 하면 된다.
+
+## 사용한 명령어 정리
+
+| 명령어 | 설명 |
+|---|---|
+| `ls` | 현재 디렉토리에 있는 파일과 폴더 목록을 확인하는 명령어 |
+| `cat` | 파일의 내용을 출력하는 명령어 |
