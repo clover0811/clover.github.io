@@ -1,3 +1,10 @@
+---
+title: "MCPP Write-up"
+date: 2026-06-08
+categories: [CTF]
+tags: [hypersonic, CTF]
+---
+
 # MCPP Write-up
 
 ## Challenge
