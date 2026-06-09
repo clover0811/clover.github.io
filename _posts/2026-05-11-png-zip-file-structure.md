@@ -3,6 +3,7 @@ title: "PNG, ZIP 파일 구조 이해하기"
 date: 2026-05-11
 categories: [Digital Forensics]
 tags: [PNG, ZIP, File Structure, Digital Forensics]
+published: false
 ---
 
 ## 미션 선정 이유
