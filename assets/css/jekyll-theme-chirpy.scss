@@ -4,27 +4,31 @@
 @use "main";
 
 /* =========================
-   Clover Custom Theme - Minimal Safe
-   검정 + 보라 포인트
+   Clover Custom Theme
+   Dark Purple Version
    ========================= */
 
 :root {
   --clover-bg: #080812;
   --clover-sidebar: #070711;
+  --clover-card: #12121f;
   --clover-point: #9b7cff;
   --clover-point-hover: #c4b5ff;
   --clover-text: #e8e5f5;
   --clover-muted: #aaa4c2;
-  --clover-border: rgba(155, 124, 255, 0.28);
+  --clover-muted-dark: #918aad;
+  --clover-border: rgba(155, 124, 255, 0.32);
 }
 
-/* 전체 배경만 어둡게 */
+/* =========================
+   Background
+   ========================= */
+
 html,
 body {
   background-color: var(--clover-bg) !important;
 }
 
-/* 메인 배경 */
 #main-wrapper,
 #main,
 main,
@@ -33,38 +37,79 @@ main,
   background-color: var(--clover-bg) !important;
 }
 
-/* 사이드바 */
+/* =========================
+   Sidebar
+   ========================= */
+
 #sidebar {
   background-color: var(--clover-sidebar) !important;
-  border-right: 1px solid var(--clover-border);
+  border-right: 1px solid rgba(155, 124, 255, 0.25) !important;
 }
 
-/* 블로그 제목 */
 #sidebar .site-title {
   color: #ffffff !important;
   font-weight: 800;
 }
 
-/* 블로그 설명 */
 #sidebar .site-subtitle {
   color: var(--clover-muted) !important;
   font-style: italic;
 }
 
-/* 사이드바 메뉴 */
 #sidebar .nav-link {
   color: var(--clover-text) !important;
   border-radius: 12px;
 }
 
-/* 선택된 메뉴 / hover */
 #sidebar .nav-link:hover,
 #sidebar .nav-item.active .nav-link {
-  background-color: rgba(155, 124, 255, 0.16) !important;
+  background-color: rgba(155, 124, 255, 0.18) !important;
   color: var(--clover-point-hover) !important;
 }
 
-/* 링크 색 */
+/* =========================
+   Main post card
+   ========================= */
+
+.post-preview {
+  background-color: var(--clover-card) !important;
+  border: 1px solid var(--clover-border) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem 1.7rem !important;
+  margin-bottom: 1.3rem !important;
+  box-shadow: 0 0 18px rgba(155, 124, 255, 0.08);
+  transition: 0.2s ease;
+}
+
+.post-preview:hover {
+  border-color: rgba(155, 124, 255, 0.65) !important;
+  box-shadow: 0 0 26px rgba(155, 124, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.post-preview .post-title,
+.post-preview .post-title a,
+.post-preview h1,
+.post-preview h2,
+.post-preview h3 {
+  color: #f2efff !important;
+  text-decoration: none !important;
+}
+
+.post-preview .post-content,
+.post-preview .post-desc,
+.post-preview p {
+  color: var(--clover-muted) !important;
+}
+
+.post-preview .post-meta {
+  color: var(--clover-muted-dark) !important;
+}
+
+/* =========================
+   Links
+   ========================= */
+
 a {
   color: var(--clover-point);
 }
@@ -73,7 +118,10 @@ a:hover {
   color: var(--clover-point-hover);
 }
 
-/* 태그 */
+/* =========================
+   Tags
+   ========================= */
+
 .post-tag,
 .tag,
 a.post-tag {
@@ -83,63 +131,15 @@ a.post-tag {
   border-radius: 999px;
 }
 
-/* 검색창 */
-#search-input {
-  background-color: #151521 !important;
-  border: 1px solid rgba(155, 124, 255, 0.25) !important;
-  color: var(--clover-text) !important;
-}
-
-/* 코드블럭 빨간 배경 방지 */
-.highlight .err,
-.highlight .gd,
-.highlight .gi {
-  color: inherit;
-  background-color: transparent;
-}
-
 /* =========================
-   Home post card styling
-   ========================= */
-
-#post-list .post-preview {
-  background: #12121f !important;
-  border: 1px solid rgba(155, 124, 255, 0.28) !important;
-  border-radius: 16px !important;
-  padding: 1.4rem 1.6rem !important;
-  margin-bottom: 1.2rem !important;
-  box-shadow: 0 0 18px rgba(155, 124, 255, 0.08);
-}
-
-#post-list .post-preview:hover {
-  border-color: rgba(155, 124, 255, 0.6) !important;
-  box-shadow: 0 0 24px rgba(155, 124, 255, 0.16);
-  transform: translateY(-2px);
-  transition: 0.2s ease;
-}
-
-#post-list .post-preview .post-title,
-#post-list .post-preview .post-title a {
-  color: #f2efff !important;
-}
-
-#post-list .post-preview .post-content {
-  color: #aaa4c2 !important;
-}
-
-#post-list .post-preview .post-meta {
-  color: #918aad !important;
-}
-
-/* =========================
-   Top search styling
+   Search
    ========================= */
 
 #search-input {
-  border-radius: 999px !important;
   background-color: #12121f !important;
-  border: 1px solid rgba(155, 124, 255, 0.28) !important;
-  color: #e8e5f5 !important;
+  border: 1px solid rgba(155, 124, 255, 0.32) !important;
+  color: var(--clover-text) !important;
+  border-radius: 999px !important;
 }
 
 #search-input::placeholder {
@@ -147,10 +147,41 @@ a.post-tag {
 }
 
 /* =========================
+   Right panel
+   ========================= */
+
+#panel-wrapper {
+  background-color: var(--clover-bg) !important;
+}
+
+#panel-wrapper .panel-heading {
+  color: #ffffff !important;
+}
+
+#panel-wrapper a {
+  color: var(--clover-muted) !important;
+}
+
+#panel-wrapper a:hover {
+  color: var(--clover-point-hover) !important;
+}
+
+/* =========================
    Footer
    ========================= */
 
 footer {
-  background-color: #080812 !important;
+  background-color: var(--clover-bg) !important;
   border-top: 1px solid rgba(155, 124, 255, 0.16) !important;
+}
+
+/* =========================
+   Code block error highlight fix
+   ========================= */
+
+.highlight .err,
+.highlight .gd,
+.highlight .gi {
+  color: inherit;
+  background-color: transparent;
 }
