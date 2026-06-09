@@ -20,13 +20,15 @@
   --clover-border: rgba(155, 124, 255, 0.32);
 }
 
-/* 전체 배경 */
+/* =========================
+   Background
+   ========================= */
+
 html,
 body {
   background-color: var(--clover-bg) !important;
 }
 
-/* 메인 영역 */
 #main-wrapper,
 #main,
 main,
@@ -35,7 +37,10 @@ main,
   background-color: var(--clover-bg) !important;
 }
 
-/* 사이드바 */
+/* =========================
+   Sidebar
+   ========================= */
+
 #sidebar {
   background-color: var(--clover-sidebar) !important;
   border-right: 1px solid rgba(155, 124, 255, 0.25) !important;
@@ -61,6 +66,28 @@ main,
 #sidebar .nav-item.active .nav-link {
   background-color: rgba(155, 124, 255, 0.18) !important;
   color: var(--clover-point-hover) !important;
+}
+
+/* =========================
+   Avatar image fix
+   ========================= */
+
+/* 프로필 이미지 바깥 정사각형 제거 */
+#avatar {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 프로필 이미지 자체 */
+#avatar img {
+  width: 110px !important;
+  height: 110px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  background-color: transparent !important;
+  border: 2px solid rgba(155, 124, 255, 0.55) !important;
+  box-shadow: 0 0 18px rgba(155, 124, 255, 0.25) !important;
 }
 
 /* =========================
@@ -129,7 +156,10 @@ main,
   color: var(--clover-muted-dark) !important;
 }
 
-/* 링크 */
+/* =========================
+   Links
+   ========================= */
+
 a {
   color: var(--clover-point);
 }
@@ -138,7 +168,10 @@ a:hover {
   color: var(--clover-point-hover);
 }
 
-/* 태그 */
+/* =========================
+   Tags
+   ========================= */
+
 .post-tag,
 .tag,
 a.post-tag {
@@ -148,7 +181,10 @@ a.post-tag {
   border-radius: 999px;
 }
 
-/* 검색창 */
+/* =========================
+   Search
+   ========================= */
+
 #search-input {
   background-color: #12121f !important;
   border: 1px solid rgba(155, 124, 255, 0.32) !important;
@@ -160,7 +196,10 @@ a.post-tag {
   color: #8f88a8 !important;
 }
 
-/* 오른쪽 패널 */
+/* =========================
+   Right panel
+   ========================= */
+
 #panel-wrapper {
   background-color: var(--clover-bg) !important;
 }
@@ -177,48 +216,22 @@ a.post-tag {
   color: var(--clover-point-hover) !important;
 }
 
-/* Footer */
+/* =========================
+   Footer
+   ========================= */
+
 footer {
   background-color: var(--clover-bg) !important;
   border-top: 1px solid rgba(155, 124, 255, 0.16) !important;
 }
 
-/* 코드블럭 빨간 배경 방지 */
+/* =========================
+   Code block error highlight fix
+   ========================= */
+
 .highlight .err,
 .highlight .gd,
 .highlight .gi {
   color: inherit;
   background-color: transparent;
-}
-
-/* =========================
-   Main content width
-   ========================= */
-
-#main > div,
-main > div {
-  max-width: 950px;
-}
-
-#post-list .card-wrapper,
-#post-list article.card-wrapper,
-#post-list .card {
-  max-width: 900px;
-}
-
-/* =========================
-   Avatar image fix
-   ========================= */
-
-/* =========================
-   Avatar image fix
-   ========================= */
-
-#avatar img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  border-radius: 50% !important;
-  background-color: transparent !important;
-  border: 2px solid rgba(155, 124, 255, 0.45) !important;
 }
