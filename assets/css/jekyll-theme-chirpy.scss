@@ -91,68 +91,60 @@ main,
 }
 
 /* =========================
-   Home post card - Chirpy safe
+   Home post card - fixed size
    ========================= */
 
-/* 카드 전체에만 디자인 적용 */
-#post-list .card-wrapper,
-#post-list article.card-wrapper,
+/* 큰 card 영역은 건드리지 않음 */
 #post-list .card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* 실제 글 미리보기 박스 */
+#post-list .post-preview {
   background-color: var(--clover-card) !important;
   border: 1px solid var(--clover-border) !important;
   border-radius: 16px !important;
+  padding: 1.25rem 1.5rem !important;
+  margin-bottom: 1.2rem !important;
+  max-width: 900px !important;
   box-shadow: 0 0 18px rgba(155, 124, 255, 0.08) !important;
-  overflow: hidden !important;
   transition: 0.2s ease;
 }
 
-/* 카드 hover */
-#post-list .card-wrapper:hover,
-#post-list article.card-wrapper:hover,
-#post-list .card:hover {
+/* 글 박스 hover */
+#post-list .post-preview:hover {
   border-color: rgba(155, 124, 255, 0.65) !important;
   box-shadow: 0 0 26px rgba(155, 124, 255, 0.18) !important;
   transform: translateY(-2px);
 }
 
-/* post-preview는 카드 박스로 만들지 않음 */
-#post-list .post-preview {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-}
-
-/* 카드 내부 여백 */
-#post-list .card-body {
-  padding: 1.25rem 1.5rem !important;
-}
-
 /* 글 제목 */
-#post-list .card-title,
-#post-list .card-title a,
-#post-list .post-title,
-#post-list .post-title a {
+#post-list .post-preview .post-title,
+#post-list .post-preview .post-title a,
+#post-list .post-preview h1,
+#post-list .post-preview h2,
+#post-list .post-preview h3 {
   color: #f2efff !important;
   text-decoration: none !important;
 }
 
-#post-list .card-title a:hover,
-#post-list .post-title a:hover {
+/* 글 제목 hover */
+#post-list .post-preview .post-title a:hover {
   color: var(--clover-point-hover) !important;
 }
 
 /* 글 설명 */
-#post-list .card-text,
-#post-list .post-content,
-#post-list .post-desc,
-#post-list p {
+#post-list .post-preview .post-content,
+#post-list .post-preview .post-desc,
+#post-list .post-preview p {
   color: var(--clover-muted) !important;
 }
 
 /* 날짜, 카테고리 */
-#post-list .post-meta,
-#post-list .post-meta a {
+#post-list .post-preview .post-meta,
+#post-list .post-preview .post-meta a {
   color: var(--clover-muted-dark) !important;
 }
 
