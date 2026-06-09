@@ -97,3 +97,60 @@ a.post-tag {
   color: inherit;
   background-color: transparent;
 }
+
+/* =========================
+   Home post card styling
+   ========================= */
+
+#post-list .post-preview {
+  background: #12121f !important;
+  border: 1px solid rgba(155, 124, 255, 0.28) !important;
+  border-radius: 16px !important;
+  padding: 1.4rem 1.6rem !important;
+  margin-bottom: 1.2rem !important;
+  box-shadow: 0 0 18px rgba(155, 124, 255, 0.08);
+}
+
+#post-list .post-preview:hover {
+  border-color: rgba(155, 124, 255, 0.6) !important;
+  box-shadow: 0 0 24px rgba(155, 124, 255, 0.16);
+  transform: translateY(-2px);
+  transition: 0.2s ease;
+}
+
+#post-list .post-preview .post-title,
+#post-list .post-preview .post-title a {
+  color: #f2efff !important;
+}
+
+#post-list .post-preview .post-content {
+  color: #aaa4c2 !important;
+}
+
+#post-list .post-preview .post-meta {
+  color: #918aad !important;
+}
+
+/* =========================
+   Top search styling
+   ========================= */
+
+#search-input {
+  border-radius: 999px !important;
+  background-color: #12121f !important;
+  border: 1px solid rgba(155, 124, 255, 0.28) !important;
+  color: #e8e5f5 !important;
+}
+
+#search-input::placeholder {
+  color: #8f88a8 !important;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+footer {
+  background-color: #080812 !important;
+  border-top: 1px solid rgba(155, 124, 255, 0.16) !important;
+}
