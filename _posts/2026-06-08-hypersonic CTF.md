@@ -3,7 +3,6 @@ title: "Hypersonic CTF"
 date: 2026-06-08
 categories: [CTF]
 tags: [hypersonic, CTF]
-published: false
 ---
 
 # MCPP Write-up
