@@ -242,7 +242,7 @@ body:has(#post) #sidebar {
   display: none !important;
 }
 
-/* 사이드바가 사라진 만큼 메인 영역을 화면 전체 기준으로 재배치 */
+/* 사이드바가 사라진 만큼 메인 영역 재배치 */
 body:has(#post) #main-wrapper {
   margin-left: 0 !important;
   padding-left: 0 !important;
@@ -250,6 +250,8 @@ body:has(#post) #main-wrapper {
   max-width: 100% !important;
   display: flex !important;
   justify-content: center !important;
+  border-left: none !important;
+  box-shadow: none !important;
 }
 
 /* 상단 바도 사이드바 기준 위치 제거 */
@@ -259,12 +261,41 @@ body:has(#post) #topbar {
   margin-left: 0 !important;
   width: 100% !important;
   max-width: 100% !important;
+  border-left: none !important;
+  box-shadow: none !important;
 }
 
 /* 오른쪽 패널과 하단 여분 패널 제거 */
 body:has(#post) #panel-wrapper,
 body:has(#post) #tail-wrapper {
   display: none !important;
+}
+
+/* 본문 바깥 래퍼에 남아 있는 선 제거 */
+body:has(#post) #core-wrapper,
+body:has(#post) main,
+body:has(#post) article,
+body:has(#post) #post,
+body:has(#post) .post,
+body:has(#post) .content,
+body:has(#post) .post-content {
+  border-left: none !important;
+  border-right: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+/* 혹시 pseudo-element로 그려진 선이 있으면 제거 */
+body:has(#post) #core-wrapper::before,
+body:has(#post) #core-wrapper::after,
+body:has(#post) main::before,
+body:has(#post) main::after,
+body:has(#post) article::before,
+body:has(#post) article::after,
+body:has(#post) #post::before,
+body:has(#post) #post::after {
+  display: none !important;
+  content: none !important;
 }
 
 /* 본문 전체 영역을 읽기 좋은 폭으로 중앙 배치 */
@@ -289,6 +320,8 @@ body:has(#post) main [class*="col-"] {
   margin-right: auto !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  border-left: none !important;
+  box-shadow: none !important;
 }
 
 /* 글 제목, 메타정보, 본문 전체 폭 제한 */
@@ -427,6 +460,8 @@ body:has(#post) .post-content hr {
   body:has(#post) .post-content figure {
     width: 100% !important;
     max-width: 100% !important;
+    border-left: none !important;
+    box-shadow: none !important;
   }
 
   body:has(#post) main {
