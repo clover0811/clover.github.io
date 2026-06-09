@@ -4,28 +4,27 @@
 @use "main";
 
 /* =========================
-   Clover Custom Theme - Safe Version
+   Clover Custom Theme - Minimal Safe
    검정 + 보라 포인트
    ========================= */
 
 :root {
   --clover-bg: #080812;
-  --clover-bg-soft: #11111d;
-  --clover-card: #171724;
-  --clover-border: rgba(155, 124, 255, 0.25);
+  --clover-sidebar: #070711;
   --clover-point: #9b7cff;
   --clover-point-hover: #c4b5ff;
   --clover-text: #e8e5f5;
   --clover-muted: #aaa4c2;
+  --clover-border: rgba(155, 124, 255, 0.28);
 }
 
-/* 전체 배경 */
+/* 전체 배경만 어둡게 */
 html,
 body {
   background-color: var(--clover-bg) !important;
 }
 
-/* 메인 영역 배경 */
+/* 메인 배경 */
 #main-wrapper,
 #main,
 main,
@@ -34,100 +33,44 @@ main,
   background-color: var(--clover-bg) !important;
 }
 
-/* 왼쪽 사이드바 */
+/* 사이드바 */
 #sidebar {
-  background-color: #070711 !important;
+  background-color: var(--clover-sidebar) !important;
   border-right: 1px solid var(--clover-border);
 }
 
-/* 사이드바 제목 */
+/* 블로그 제목 */
 #sidebar .site-title {
   color: #ffffff !important;
   font-weight: 800;
 }
 
+/* 블로그 설명 */
 #sidebar .site-subtitle {
   color: var(--clover-muted) !important;
   font-style: italic;
 }
 
-/* 사이드바 메뉴 깨짐 방지 */
-#sidebar ul {
-  list-style: none !important;
-  padding-left: 0 !important;
-}
-
-#sidebar li {
-  list-style: none !important;
-}
-
 /* 사이드바 메뉴 */
 #sidebar .nav-link {
-  border-radius: 12px;
   color: var(--clover-text) !important;
+  border-radius: 12px;
 }
 
-/* 현재 선택된 메뉴 / hover */
+/* 선택된 메뉴 / hover */
 #sidebar .nav-link:hover,
 #sidebar .nav-item.active .nav-link {
   background-color: rgba(155, 124, 255, 0.16) !important;
   color: var(--clover-point-hover) !important;
 }
 
-/* 글 카드 */
-.post-preview {
-  background-color: var(--clover-card) !important;
-  border: 1px solid var(--clover-border) !important;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(155, 124, 255, 0.06);
-}
-
-/* 글 카드 hover */
-.post-preview:hover {
-  border-color: rgba(155, 124, 255, 0.55) !important;
-  box-shadow: 0 0 24px rgba(155, 124, 255, 0.14);
-}
-
-/* 글 제목 */
-.post-preview h1,
-.post-preview h2,
-.post-preview h3,
-.post-preview .post-title,
-.post-preview .post-title a {
-  color: #ffffff !important;
-}
-
-/* 글 설명, 날짜 */
-.post-preview .post-content,
-.post-preview .post-meta,
-.post-preview .post-desc {
-  color: var(--clover-muted) !important;
-}
-
-/* 링크 */
+/* 링크 색 */
 a {
   color: var(--clover-point);
 }
 
 a:hover {
   color: var(--clover-point-hover);
-}
-
-/* 오른쪽 패널 */
-#panel-wrapper {
-  background-color: var(--clover-bg) !important;
-}
-
-#panel-wrapper .panel-heading {
-  color: #ffffff !important;
-}
-
-#panel-wrapper a {
-  color: var(--clover-muted) !important;
-}
-
-#panel-wrapper a:hover {
-  color: var(--clover-point-hover) !important;
 }
 
 /* 태그 */
