@@ -111,7 +111,7 @@ main,
     margin-left: var(--clover-sidebar-width) !important;
     width: calc(100% - var(--clover-sidebar-width)) !important;
     max-width: none !important;
-    padding: 0 !important;
+    padding: 44px 0 0 0 !important;
   }
 
   #main-wrapper > .container {
@@ -176,20 +176,28 @@ main,
 
 /* =========================
    Topbar / Breadcrumb / Search
-   예시 사진처럼 배치
-   스크롤 시 겹치지 않도록 fixed 사용 안 함
+   위치는 유지하고, 스크롤 겹침만 방지
    ========================= */
 
 @media (min-width: 1200px) {
   #topbar-wrapper {
-    margin-left: var(--clover-sidebar-width) !important;
+    position: fixed !important;
+
+    top: 0 !important;
+    left: var(--clover-sidebar-width) !important;
+
     width: calc(100vw - var(--clover-sidebar-width)) !important;
     max-width: calc(100vw - var(--clover-sidebar-width)) !important;
 
     height: 44px !important;
 
+    margin-left: 0 !important;
+
     background-color: var(--clover-bg) !important;
+    border-bottom: none !important;
+
     overflow: visible !important;
+    z-index: 9999 !important;
   }
 
   #topbar {
@@ -207,6 +215,8 @@ main,
     padding-right: 0 !important;
 
     display: block !important;
+
+    background-color: var(--clover-bg) !important;
     overflow: visible !important;
   }
 
@@ -224,7 +234,9 @@ main,
     padding: 0 !important;
 
     text-align: left !important;
-    z-index: 10 !important;
+
+    background-color: var(--clover-bg) !important;
+    z-index: 10000 !important;
   }
 
   /* Search 위치 */
@@ -244,7 +256,7 @@ main,
     padding: 0 !important;
 
     transform: none !important;
-    z-index: 11 !important;
+    z-index: 10001 !important;
   }
 
   #search-input {
@@ -274,7 +286,7 @@ main,
     padding: 0 !important;
 
     transform: none !important;
-    z-index: 12 !important;
+    z-index: 10002 !important;
   }
 }
 
