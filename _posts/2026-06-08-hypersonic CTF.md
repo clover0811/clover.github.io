@@ -1,5 +1,5 @@
 ---
-title: "MCPP Write-up"
+title: "Hypersonic CTF"
 date: 2026-06-08
 categories: [CTF]
 tags: [hypersonic, CTF]
