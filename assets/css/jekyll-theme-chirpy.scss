@@ -332,39 +332,41 @@ footer {
 }
 
 /* =========================
-   Post page center layout
-   글 본문 페이지 가운데 정렬
+   Post page centered reading layout
+   글 본문 페이지 중앙 정렬
    ========================= */
 
-/* 글 본문 페이지에서만 전체 본문 영역을 가운데로 이동 */
-body:has(.post-content) #core-wrapper {
+/* 포스트 페이지의 메인 영역 자체를 가운데로 */
+body:has(.post-content) main {
   max-width: 980px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  float: none !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
 }
 
-/* 글 제목, 메타정보, 본문이 같은 폭 안에 들어오도록 정리 */
-body:has(.post-content) #core-wrapper > * {
-  max-width: 980px !important;
+/* 글 제목, 메타정보, 본문이 같은 중앙 축을 사용하도록 */
+body:has(.post-content) article,
+body:has(.post-content) #post,
+body:has(.post-content) .post {
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-/* 실제 글 내용 폭 */
+/* 실제 본문 */
 body:has(.post-content) .post-content {
   max-width: 900px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  line-height: 1.85;
 }
 
-/* 글 제목 영역도 본문과 맞추기 */
-body:has(.post-content) h1 {
-  max-width: 900px !important;
-}
-
-/* 코드블럭도 본문 폭을 넘지 않게 */
+/* 코드블럭도 본문 폭에 맞춤 */
 body:has(.post-content) .post-content .highlight,
 body:has(.post-content) .post-content div[class^="language-"],
-body:has(.post-content) .post-content div[class*=" language-"] {
+body:has(.post-content) .post-content div[class*=" language-"],
+body:has(.post-content) .post-content pre {
   max-width: 900px !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -375,13 +377,32 @@ body:has(.post-content) .post-content pre {
   overflow-x: auto !important;
 }
 
-/* 화면이 좁을 때는 자동으로 전체 폭 사용 */
-@media (max-width: 1199px) {
-  body:has(.post-content) #core-wrapper,
-  body:has(.post-content) .post-content,
-  body:has(.post-content) .post-content .highlight,
-  body:has(.post-content) .post-content div[class^="language-"],
-  body:has(.post-content) .post-content div[class*=" language-"] {
+/* 너무 큰 화면에서 오른쪽으로 비는 느낌 줄이기 */
+body:has(.post-content) #core-wrapper {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* 포스트 페이지의 오른쪽 패널 공간 제거 */
+body:has(.post-content) #panel-wrapper {
+  display: none !important;
+}
+
+/* 오른쪽 패널을 숨긴 만큼 본문 영역 확장 */
+body:has(.post-content) #core-wrapper main {
+  flex: 0 1 980px !important;
+  max-width: 980px !important;
+}
+
+/* 모바일에서는 원래대로 */
+@media (max-width: 991px) {
+  body:has(.post-content) main,
+  body:has(.post-content) article,
+  body:has(.post-content) #post,
+  body:has(.post-content) .post,
+  body:has(.post-content) .post-content {
     max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 }
