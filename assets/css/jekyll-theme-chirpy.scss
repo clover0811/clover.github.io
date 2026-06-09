@@ -98,7 +98,7 @@ main,
 
 /* 카드 내부 여백 */
 #post-list .card-body {
-  padding: 1.5rem 1.7rem !important;
+  padding: 1.25rem 1.5rem !important;
 }
 
 /* 글 제목 */
@@ -189,4 +189,19 @@ footer {
 .highlight .gi {
   color: inherit;
   background-color: transparent;
+}
+
+/* =========================
+   Main content width
+   ========================= */
+
+#main > div,
+main > div {
+  max-width: 950px;
+}
+
+#post-list .card-wrapper,
+#post-list article.card-wrapper,
+#post-list .card {
+  max-width: 900px;
 }
