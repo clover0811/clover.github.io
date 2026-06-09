@@ -1,0 +1,127 @@
+---
+---
+
+@use "main";
+
+/* =========================
+   Clover Custom Theme
+   Dark Purple Mood
+   ========================= */
+
+:root {
+  --clover-bg: #070711;
+  --clover-sidebar: #0b0b18;
+  --clover-card: #111122;
+  --clover-point: #9b7cff;
+  --clover-point-hover: #c4b5ff;
+  --clover-text: #e6e3f5;
+  --clover-muted: #9a94b8;
+}
+
+/* 전체 배경 */
+body {
+  background-color: var(--clover-bg);
+  color: var(--clover-text);
+}
+
+/* 메인 영역 */
+#main-wrapper,
+main,
+#topbar-wrapper {
+  background-color: var(--clover-bg);
+}
+
+/* 왼쪽 사이드바 */
+#sidebar {
+  background: linear-gradient(180deg, #070711 0%, #0b0b18 100%);
+  border-right: 1px solid rgba(155, 124, 255, 0.25);
+}
+
+/* 블로그 제목 */
+#sidebar .site-title {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+/* 블로그 설명 */
+#sidebar .site-subtitle {
+  color: var(--clover-muted);
+  font-style: italic;
+}
+
+/* 사이드바 메뉴 */
+#sidebar ul li.nav-item a.nav-link {
+  border-radius: 12px;
+  margin: 6px 12px;
+  color: var(--clover-text);
+  transition: 0.2s ease;
+}
+
+/* 선택된 메뉴 / hover */
+#sidebar ul li.nav-item a.nav-link:hover,
+#sidebar ul li.nav-item.active a.nav-link {
+  background-color: rgba(155, 124, 255, 0.16);
+  color: var(--clover-point-hover);
+  border: 1px solid rgba(155, 124, 255, 0.45);
+}
+
+/* 메인 글 카드 */
+.post-preview {
+  background-color: var(--clover-card);
+  border: 1px solid rgba(155, 124, 255, 0.28);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 24px rgba(155, 124, 255, 0.08);
+  transition: 0.2s ease;
+}
+
+/* 글 카드 hover */
+.post-preview:hover {
+  transform: translateY(-3px);
+  border-color: rgba(155, 124, 255, 0.70);
+  box-shadow: 0 0 28px rgba(155, 124, 255, 0.20);
+}
+
+/* 글 카드 제목 */
+.post-preview h1,
+.post-preview h2,
+.post-preview h3,
+.post-preview .post-title {
+  color: #ffffff;
+}
+
+/* 글 카드 링크 */
+.post-preview a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.post-preview a:hover {
+  color: var(--clover-point-hover);
+}
+
+/* 날짜, 설명 */
+.post-preview .post-meta,
+.post-preview .post-content,
+.post-preview .post-desc {
+  color: var(--clover-muted);
+}
+
+/* 링크 색상 */
+a {
+  color: var(--clover-point);
+}
+
+a:hover {
+  color: var(--clover-point-hover);
+}
+
+/* 태그 */
+.post-tag,
+.tag {
+  background-color: rgba(155, 124, 255, 0.12);
+  border: 1px solid rgba(155, 124, 255, 0.35);
+  color: var(--clover-point);
+  border-radius: 999px;
+}
