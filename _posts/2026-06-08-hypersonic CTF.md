@@ -295,7 +295,7 @@ admin token은 client credentials 방식으로 발급받을 수 있다.
 
 요청은 다음과 같은 형태이다.
 
-```http
+```text
 POST /oauth/token
 Content-Type: application/x-www-form-urlencoded
 
