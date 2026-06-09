@@ -88,6 +88,78 @@ main,
 }
 
 /* =========================
+   Layout fix
+   Left sidebar / Center content / Right panel
+   ========================= */
+
+@media (min-width: 1200px) {
+  #main-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 2rem !important;
+
+    width: calc(100% - 260px) !important;
+    max-width: none !important;
+
+    margin-left: 260px !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  #main {
+    flex: 1 1 auto !important;
+    max-width: 860px !important;
+    min-width: 0 !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  #panel-wrapper {
+    display: block !important;
+    flex: 0 0 260px !important;
+
+    width: 260px !important;
+    max-width: 260px !important;
+    min-width: 260px !important;
+
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    background-color: var(--clover-bg) !important;
+  }
+
+  #panel-wrapper .access,
+  #panel-wrapper .toc-border-cover,
+  #panel-wrapper #toc-wrapper {
+    width: 100% !important;
+  }
+}
+
+/* =========================
+   Topbar search position fix
+   ========================= */
+
+@media (min-width: 1200px) {
+  #topbar-wrapper {
+    margin-left: 260px !important;
+    width: calc(100% - 260px) !important;
+    background-color: var(--clover-bg) !important;
+  }
+
+  #topbar {
+    max-width: 1160px !important;
+    margin: 0 auto !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* =========================
    Home post card - fixed
    ========================= */
 
@@ -105,7 +177,7 @@ main,
   border: 1px solid var(--clover-border) !important;
   border-radius: 16px !important;
   box-shadow: 0 0 18px rgba(155, 124, 255, 0.08) !important;
-  max-width: 900px !important;
+  max-width: 100% !important;
   width: 100% !important;
   overflow: hidden !important;
   transition: 0.2s ease;
@@ -150,6 +222,37 @@ main,
 #post-list .post-meta,
 #post-list .post-meta a {
   color: var(--clover-muted-dark) !important;
+}
+
+/* =========================
+   Post page
+   ========================= */
+
+.post-content,
+.post-tail-wrapper,
+article.post {
+  color: var(--clover-text) !important;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  color: #f2efff !important;
+}
+
+.post-content p,
+.post-content li {
+  color: var(--clover-text) !important;
+}
+
+.post-content code {
+  background-color: rgba(155, 124, 255, 0.15) !important;
+  color: #d8ccff !important;
+  border-radius: 5px;
+  padding: 0.15rem 0.35rem;
 }
 
 /* =========================
@@ -209,6 +312,25 @@ a.post-tag {
 }
 
 #panel-wrapper a:hover {
+  color: var(--clover-point-hover) !important;
+}
+
+#panel-wrapper .access {
+  border-left: 1px solid rgba(155, 124, 255, 0.18) !important;
+  padding-left: 1rem !important;
+}
+
+#toc-wrapper {
+  border-left: 1px solid rgba(155, 124, 255, 0.35) !important;
+  padding-left: 1rem !important;
+}
+
+#toc-wrapper .toc-link {
+  color: var(--clover-muted) !important;
+}
+
+#toc-wrapper .toc-link:hover,
+#toc-wrapper .toc-link.active {
   color: var(--clover-point-hover) !important;
 }
 
