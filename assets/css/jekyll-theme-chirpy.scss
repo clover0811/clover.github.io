@@ -233,77 +233,89 @@ footer {
 }
 
 /* =========================
-   Post page final reading layout
-   본문 전체 중앙 배치 + 적당한 읽기 폭
+   Post page final centered layout
+   본문 전체 중앙 박스화
    ========================= */
 
-/* 포스트 페이지에서 오른쪽 패널 제거 */
-body:has(#post) #panel-wrapper {
+/* 글 페이지에서 오른쪽 패널 숨김 */
+body:has(.post-content) #panel-wrapper {
   display: none !important;
 }
 
-/* 포스트 페이지의 Bootstrap row를 중앙 정렬 */
-body:has(#post) #main-wrapper .row {
+/* 글 페이지 전체 content 영역을 중앙 정렬 */
+body:has(.post-content) #main-wrapper {
+  display: flex !important;
   justify-content: center !important;
 }
 
-/* 본문 main column 자체를 적당한 폭으로 제한 */
-body:has(#post) main {
-  flex: 0 0 820px !important;
+/* main 영역 자체를 읽기 좋은 폭으로 고정 */
+body:has(.post-content) main {
   width: 820px !important;
   max-width: 820px !important;
+  min-width: 0 !important;
   margin-left: auto !important;
   margin-right: auto !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* 글 전체 영역 */
-body:has(#post) #post {
+/* main 안쪽의 Bootstrap row/column이 다시 넓어지는 것 방지 */
+body:has(.post-content) main .row,
+body:has(.post-content) main [class*="col-"] {
+  width: 100% !important;
+  max-width: 820px !important;
+  flex: 0 0 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* 글 본문 전체 */
+body:has(.post-content) article,
+body:has(.post-content) #post,
+body:has(.post-content) .post,
+body:has(.post-content) .post-content {
   width: 100% !important;
   max-width: 820px !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-/* Chirpy 본문 영역 */
-body:has(#post) #post .content,
-body:has(#post) .post-content {
-  width: 100% !important;
+/* 글 제목 영역 */
+body:has(.post-content) #post > header,
+body:has(.post-content) #post h1 {
   max-width: 820px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+}
+
+/* 실제 본문 */
+body:has(.post-content) .post-content {
   line-height: 1.8 !important;
   font-size: 1rem !important;
 }
 
-/* 글 제목 영역 */
-body:has(#post) #post > header,
-body:has(#post) #post h1 {
-  max-width: 820px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
 /* 본문 문단 */
-body:has(#post) #post .content p,
-body:has(#post) .post-content p {
+body:has(.post-content) .post-content p,
+body:has(.post-content) .post-content li {
   max-width: 820px !important;
   line-height: 1.8 !important;
+}
+
+/* 본문 문단 색상 */
+body:has(.post-content) .post-content p {
   margin-bottom: 1.2rem !important;
   color: #d8d3ea !important;
 }
 
-/* 리스트 */
-body:has(#post) #post .content li,
-body:has(#post) .post-content li {
-  line-height: 1.8 !important;
+/* 리스트 간격 */
+body:has(.post-content) .post-content li {
   margin-bottom: 0.4rem !important;
 }
 
 /* 소제목 */
-body:has(#post) #post .content h2,
-body:has(#post) .post-content h2 {
+body:has(.post-content) .post-content h2 {
   margin-top: 2.8rem !important;
   margin-bottom: 1.1rem !important;
   padding-bottom: 0.4rem !important;
@@ -311,24 +323,17 @@ body:has(#post) .post-content h2 {
   color: #f2efff !important;
 }
 
-body:has(#post) #post .content h3,
-body:has(#post) .post-content h3 {
+body:has(.post-content) .post-content h3 {
   margin-top: 2rem !important;
   margin-bottom: 0.9rem !important;
   color: #e8e5f5 !important;
 }
 
-/* 코드블럭 박스 폭 제한 */
-body:has(#post) #post .content .highlight,
-body:has(#post) #post .content .highlighter-rouge,
-body:has(#post) #post .content div[class^="language-"],
-body:has(#post) #post .content div[class*=" language-"],
-body:has(#post) #post .content figure,
-body:has(#post) .post-content .highlight,
-body:has(#post) .post-content .highlighter-rouge,
-body:has(#post) .post-content div[class^="language-"],
-body:has(#post) .post-content div[class*=" language-"],
-body:has(#post) .post-content figure {
+/* 코드블럭 박스 */
+body:has(.post-content) .post-content .highlighter-rouge,
+body:has(.post-content) .post-content .highlight,
+body:has(.post-content) .post-content div[class*="language-"],
+body:has(.post-content) .post-content figure {
   width: 100% !important;
   max-width: 820px !important;
   margin: 1.3rem auto !important;
@@ -338,8 +343,8 @@ body:has(#post) .post-content figure {
 }
 
 /* 코드블럭 내부 */
-body:has(#post) #post .content pre,
-body:has(#post) .post-content pre {
+body:has(.post-content) .post-content pre {
+  width: 100% !important;
   max-width: 100% !important;
   overflow-x: auto !important;
   white-space: pre !important;
@@ -348,20 +353,22 @@ body:has(#post) .post-content pre {
   line-height: 1.6 !important;
 }
 
+/* 긴 코드가 레이아웃을 밀지 않게 */
+body:has(.post-content) .post-content code {
+  word-break: normal !important;
+}
+
 /* 인라인 코드 */
-body:has(#post) #post .content p code,
-body:has(#post) #post .content li code,
-body:has(#post) .post-content p code,
-body:has(#post) .post-content li code {
+body:has(.post-content) .post-content p code,
+body:has(.post-content) .post-content li code {
   background-color: rgba(155, 124, 255, 0.14) !important;
   color: #d8ccff !important;
   border-radius: 6px;
   padding: 0.15rem 0.35rem;
 }
 
-/* 이미지가 본문 밖으로 튀지 않게 */
-body:has(#post) #post .content img,
-body:has(#post) .post-content img {
+/* 이미지 */
+body:has(.post-content) .post-content img {
   max-width: 100% !important;
   border-radius: 12px;
   display: block;
@@ -369,32 +376,38 @@ body:has(#post) .post-content img {
 }
 
 /* 구분선 */
-body:has(#post) #post .content hr,
-body:has(#post) .post-content hr {
+body:has(.post-content) .post-content hr {
   max-width: 820px !important;
   margin: 2rem auto !important;
   border-color: rgba(155, 124, 255, 0.25) !important;
 }
 
-/* 모바일에서는 화면 폭 사용 */
+/* 큰 화면에서 시각적으로 왼쪽에 붙어 보이는 문제 보정 */
+@media (min-width: 1200px) {
+  body:has(.post-content) main {
+    transform: translateX(80px);
+  }
+}
+
+/* 모바일에서는 원래대로 */
 @media (max-width: 991px) {
-  body:has(#post) main,
-  body:has(#post) #post,
-  body:has(#post) #post .content,
-  body:has(#post) .post-content,
-  body:has(#post) #post .content .highlight,
-  body:has(#post) #post .content .highlighter-rouge,
-  body:has(#post) #post .content div[class*="language-"],
-  body:has(#post) #post .content figure,
-  body:has(#post) .post-content .highlight,
-  body:has(#post) .post-content .highlighter-rouge,
-  body:has(#post) .post-content div[class*="language-"],
-  body:has(#post) .post-content figure {
+  body:has(.post-content) main,
+  body:has(.post-content) main .row,
+  body:has(.post-content) main [class*="col-"],
+  body:has(.post-content) article,
+  body:has(.post-content) #post,
+  body:has(.post-content) .post,
+  body:has(.post-content) .post-content,
+  body:has(.post-content) .post-content .highlighter-rouge,
+  body:has(.post-content) .post-content .highlight,
+  body:has(.post-content) .post-content div[class*="language-"],
+  body:has(.post-content) .post-content figure {
     width: 100% !important;
     max-width: 100% !important;
+    transform: none !important;
   }
 
-  body:has(#post) main {
+  body:has(.post-content) main {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
