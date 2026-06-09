@@ -407,3 +407,66 @@ footer {
   background-color: var(--clover-bg) !important;
   border-top: 1px solid rgba(155, 124, 255, 0.16) !important;
 }
+
+/* =========================
+   Search bar final position fix
+   ========================= */
+
+@media (min-width: 1200px) {
+  /* topbar 자체를 오른쪽 패널 포함한 전체 폭 기준으로 정렬 */
+  #topbar-wrapper {
+    margin-left: var(--clover-sidebar-width) !important;
+    width: calc(100% - var(--clover-sidebar-width)) !important;
+    height: 44px !important;
+  }
+
+  #topbar {
+    position: relative !important;
+
+    max-width: calc(
+      var(--clover-content-width) + var(--clover-panel-width) + var(--clover-gap)
+    ) !important;
+
+    width: calc(
+      var(--clover-content-width) + var(--clover-panel-width) + var(--clover-gap)
+    ) !important;
+
+    height: 44px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* breadcrumb는 왼쪽 */
+  #breadcrumb {
+    position: absolute !important;
+    left: 0 !important;
+    top: 10px !important;
+    margin: 0 !important;
+  }
+
+  /* 검색 영역은 오른쪽 위로 고정 */
+  #search-wrapper {
+    position: absolute !important;
+    right: 0 !important;
+    top: 6px !important;
+
+    width: 220px !important;
+    max-width: 220px !important;
+    margin: 0 !important;
+  }
+
+  #search-input {
+    width: 220px !important;
+    height: 28px !important;
+  }
+
+  #search-trigger {
+    position: absolute !important;
+    right: 0 !important;
+    top: 6px !important;
+    margin: 0 !important;
+  }
+}
