@@ -24,6 +24,15 @@
   --clover-content-width: 820px;
   --clover-panel-width: 270px;
   --clover-gap: 34px;
+
+  --clover-shell-width: calc(
+    var(--clover-content-width) + var(--clover-panel-width) + var(--clover-gap)
+  );
+
+  --clover-shell-left: calc(
+    var(--clover-sidebar-width) +
+      (100vw - var(--clover-sidebar-width) - var(--clover-shell-width)) / 2
+  );
 }
 
 /* =========================
@@ -111,16 +120,12 @@ main,
   }
 
   #main-wrapper > .container {
-    max-width: calc(
-      var(--clover-content-width) + var(--clover-panel-width) + var(--clover-gap)
-    ) !important;
-
-    width: calc(
-      var(--clover-content-width) + var(--clover-panel-width) + var(--clover-gap)
-    ) !important;
+    width: var(--clover-shell-width) !important;
+    max-width: var(--clover-shell-width) !important;
 
     margin-left: auto !important;
     margin-right: auto !important;
+
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
@@ -129,7 +134,9 @@ main,
     display: flex !important;
     flex-wrap: nowrap !important;
     align-items: flex-start !important;
+
     gap: var(--clover-gap) !important;
+
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
@@ -142,12 +149,14 @@ main,
 
     padding-left: 0 !important;
     padding-right: 0 !important;
+
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
 
   #panel-wrapper {
     display: block !important;
+
     flex: 0 0 var(--clover-panel-width) !important;
     width: var(--clover-panel-width) !important;
     max-width: var(--clover-panel-width) !important;
@@ -155,6 +164,7 @@ main,
 
     padding-left: 0 !important;
     padding-right: 0 !important;
+
     margin-left: 0 !important;
     margin-right: 0 !important;
 
@@ -170,55 +180,105 @@ main,
 }
 
 /* =========================
-   Topbar / Search 위치 수정
-   absolute, fixed 사용 금지
+   Topbar / Breadcrumb / Search
+   예시 사진처럼 상단 구조 고정
    ========================= */
 
 @media (min-width: 1200px) {
   #topbar-wrapper {
     margin-left: var(--clover-sidebar-width) !important;
-    width: calc(100% - var(--clover-sidebar-width)) !important;
-    max-width: calc(100% - var(--clover-sidebar-width)) !important;
+    width: calc(100vw - var(--clover-sidebar-width)) !important;
+    max-width: calc(100vw - var(--clover-sidebar-width)) !important;
+
+    height: 44px !important;
+
     background-color: var(--clover-bg) !important;
+    overflow: visible !important;
   }
 
   #topbar {
-    display: flex !important;
-    align-items: center !important;
+    position: relative !important;
 
-    max-width: calc(
-      var(--clover-content-width) + var(--clover-panel-width) + var(--clover-gap)
-    ) !important;
-
-    width: calc(
-      var(--clover-content-width) + var(--clover-panel-width) + var(--clover-gap)
-    ) !important;
+    width: var(--clover-shell-width) !important;
+    max-width: var(--clover-shell-width) !important;
 
     height: 44px !important;
+
     margin-left: auto !important;
     margin-right: auto !important;
 
     padding-left: 0 !important;
     padding-right: 0 !important;
+
+    display: block !important;
+    overflow: visible !important;
   }
 
+  /* Home / breadcrumb 위치 */
   #breadcrumb {
-    flex: 1 1 auto !important;
+    position: fixed !important;
+
+    top: 14px !important;
+    left: var(--clover-shell-left) !important;
+
+    width: var(--clover-content-width) !important;
+    max-width: var(--clover-content-width) !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
+    text-align: left !important;
+    z-index: 1000 !important;
   }
 
+  /* Search 위치 */
   #search-wrapper,
-  #search-trigger {
-    position: static !important;
-    margin-left: auto !important;
-    margin-right: 0 !important;
-    flex: 0 0 auto !important;
+  #topbar #search-wrapper,
+  #topbar .search-wrapper,
+  #search {
+    position: fixed !important;
+
+    top: 6px !important;
+    left: calc(
+      var(--clover-shell-left) + var(--clover-content-width) + var(--clover-gap)
+    ) !important;
+
+    width: 200px !important;
+    max-width: 200px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: none !important;
+    z-index: 1001 !important;
   }
 
   #search-input {
     width: 200px !important;
+    max-width: 200px !important;
     height: 28px !important;
+
+    margin: 0 !important;
+
+    background-color: #12121f !important;
+    border: 1px solid rgba(155, 124, 255, 0.32) !important;
+    color: var(--clover-text) !important;
+    border-radius: 999px !important;
+  }
+
+  #search-trigger {
+    position: fixed !important;
+
+    top: 6px !important;
+    left: calc(
+      var(--clover-shell-left) + var(--clover-content-width) + var(--clover-gap)
+    ) !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: none !important;
+    z-index: 1002 !important;
   }
 }
 
