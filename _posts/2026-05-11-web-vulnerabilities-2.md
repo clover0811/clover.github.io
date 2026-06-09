@@ -11,6 +11,7 @@ tags:
   - business-logic-vulnerability
   - web-cache-poisoning
   - http-request-smuggling
+published: false
 ---
 
 이전 글에서는 웹 보안에서 자주 등장하는 기본적인 취약점들을 정리했다.  
