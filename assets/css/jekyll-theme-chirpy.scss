@@ -231,3 +231,102 @@ footer {
   color: inherit;
   background-color: transparent;
 }
+
+/* =========================
+   Post page readability
+   글 본문 페이지 가독성 정리
+   ========================= */
+
+/* 글 본문 전체 폭 조절 */
+#post,
+.post {
+  max-width: 920px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 글 본문 내용 폭 */
+.post-content {
+  max-width: 860px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+/* 글 제목 영역 정리 */
+#post h1,
+.post h1 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  color: #ffffff !important;
+}
+
+/* 본문 문단 */
+.post-content p {
+  margin-bottom: 1.2rem;
+  color: #d8d3ea !important;
+}
+
+/* 본문 소제목 */
+.post-content h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(155, 124, 255, 0.28);
+  color: #f2efff !important;
+}
+
+.post-content h3 {
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+  color: #e8e5f5 !important;
+}
+
+/* 코드블럭 폭 정리 */
+.post-content .highlight,
+.post-content div[class^="language-"],
+.post-content div[class*=" language-"] {
+  max-width: 100% !important;
+  margin: 1.4rem auto !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(155, 124, 255, 0.22) !important;
+  overflow-x: auto !important;
+}
+
+/* 코드블럭 내부 */
+.post-content pre {
+  padding: 1.1rem 1.2rem !important;
+  font-size: 0.92rem !important;
+  line-height: 1.65 !important;
+}
+
+/* 인라인 코드 */
+.post-content code.highlighter-rouge,
+.post-content p code,
+.post-content li code {
+  background-color: rgba(155, 124, 255, 0.14) !important;
+  color: #d8ccff !important;
+  border-radius: 6px;
+  padding: 0.15rem 0.35rem;
+}
+
+/* 이미지가 본문 밖으로 튀지 않게 */
+.post-content img {
+  max-width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* 표 정리 */
+.post-content table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+}
+
+/* 글 아래쪽 여백 */
+.post-content {
+  padding-bottom: 3rem;
+}
