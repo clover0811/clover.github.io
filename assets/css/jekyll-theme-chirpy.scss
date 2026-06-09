@@ -205,3 +205,15 @@ main > div {
 #post-list .card {
   max-width: 900px;
 }
+
+/* =========================
+   Avatar image fix
+   ========================= */
+
+#avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  background-color: #ffffff !important;
+  border-radius: 12px !important;
+}
