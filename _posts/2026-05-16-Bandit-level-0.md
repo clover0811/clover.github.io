@@ -3,7 +3,7 @@ title: "Bandit Level 0"
 date: 2026-05-16
 categories: [Wargame, Bandit]
 tags: [Bandit, OverTheWire, Wargame, Linux, SSH]
-show: false
+published: false
 ---
 
 ## 문제 설명
