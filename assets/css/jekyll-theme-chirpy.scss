@@ -487,23 +487,15 @@ a.post-tag {
    Sidebar Bottom Icons
    ========================= */
 
-#sidebar {
-  position: fixed !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  height: 100vh !important;
-}
-
 #sidebar .sidebar-bottom {
-  position: absolute !important;
+  position: fixed !important;
+  left: 30px !important;
+  bottom: 30px !important;
 
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   align-items: center !important;
-
-  left: 30px !important;
-  bottom: 30px !important;
 
   width: auto !important;
   gap: 10px !important;
