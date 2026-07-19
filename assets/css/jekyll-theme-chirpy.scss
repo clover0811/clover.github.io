@@ -483,6 +483,27 @@ a.post-tag {
    Footer
    ========================= */
 
+/* =========================
+   Sidebar Bottom Icons
+   세로 배치 → 가로 배치
+   ========================= */
+
+#sidebar .sidebar-bottom {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+
+  gap: 10px !important;
+  left: 30px !important;
+  bottom: 25px !important;
+}
+
+/* 기존 아이콘 사이의 세로 여백 제거 */
+#sidebar .sidebar-bottom a {
+  margin: 0 !important;
+}
 footer {
   background-color: var(--clover-bg) !important;
   border-top: 1px solid rgba(155, 124, 255, 0.16) !important;
